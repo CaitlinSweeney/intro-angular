@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="boots">
+  <head>
+    <title>My Super Awesome Style App</title>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge"> -->
+    <script type= "text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
+    <script type= "text/javascript" src="main.js"></script>
+  </head>
+
+  <body ng-controller="closet">
+    <h1> {{ greeting }} </h1>
+      <h2></h2>
+  <a href='#'><img ng-src="{{ link }}"/></a>
+  <button ng-click="changeTop()">What to pack!</button>
+
+<div ng-controller="vogueCTRL as vogue">
+
+    <h2> {{ vogue.subGreeting }} </h2>
+<p>I love the 2000s because everyone started to love haute couture. I would like the people that buy my clothes to understand that for me it's one small piece of art. Design and style should work toward making you look good and feel good without a lot of effort so you can get on with the things that matter. I couldn't love a woman who inspired me to be totally disinterested. If I fell in love with a <a href='#'>woman for an artistic reason</a>, or from the point of view of my work, I think it would rob her of something. Fashion to me has become very disposable; I wanted to get back to craft, to clothes that could last.
+</p>
+<button ng-click= "vogue.changePar()">Read More...</button>
+
+<input type="text" placeholder="Favorite Shoes" ng-model="vogue.myFavShoes"/>
+<button ng-click="addShoes()">Add Shoes</button>
+<div ng-repeat="shoes in shoes.myShoes">{{ shoes }}</div>
+</div>
+
+
+
+
+
+  </body>
+</html>
