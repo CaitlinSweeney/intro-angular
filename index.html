@@ -3,29 +3,54 @@
   <head>
     <title>My Super Awesome Style App</title>
     <meta charset="utf-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <script type= "text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
     <script type= "text/javascript" src="main.js"></script>
   </head>
 
   <body ng-controller="closet">
     <h1> {{ greeting }} </h1>
-      <h2></h2>
+
   <a href='#'><img ng-src="{{ link }}"/></a>
   <button ng-click="changeTop()">What to pack!</button>
+  
+  <!-- new section -->
 
 <div ng-controller="vogueCTRL as vogue">
 
     <h2> {{ vogue.subGreeting }} </h2>
-<p>I love the 2000s because everyone started to love haute couture. I would like the people that buy my clothes to understand that for me it's one small piece of art. Design and style should work toward making you look good and feel good without a lot of effort so you can get on with the things that matter. I couldn't love a woman who inspired me to be totally disinterested. If I fell in love with a <a href='#'>woman for an artistic reason</a>, or from the point of view of my work, I think it would rob her of something. Fashion to me has become very disposable; I wanted to get back to craft, to clothes that could last.
-</p>
-<button ng-click= "vogue.changePar()">Read More...</button>
+    <p>I love the 2000s because everyone started to love haute couture. I would like the people that buy my clothes to understand that for me it's one small piece of art. Design and style should work toward making you look good and feel good without a lot of effort so you can get on with the things that matter. I couldn't love a woman who inspired me to be totally disinterested. If I fell in love with a <a href='http://eyeondesign.aiga.org' ng-click="vogue.doublecheck()" ng-if="vogue.outLink" >woman for an artistic reason</a>, or from the point of view of my work, I think it would rob her of something. Fashion to me has become very disposable; I wanted to get back to craft, to clothes that could last.
+    </p>
+    <button ng-click= "vogue.changePar()">Read More...</button>
+    <br/>
+    <h3> {{vogue.newText}} </h3>
+    <button ng-click= "vogue.addEx()">Give me a..!</button>
+    </div>
 
-<input type="text" placeholder="Favorite Shoes" ng-model="vogue.myFavShoes"/>
-<button ng-click="addShoes()">Add Shoes</button>
-<div ng-repeat="shoes in shoes.myShoes">{{ shoes }}</div>
+<!-- new section -->
+
+<div ng-controller = "elleCTRL as elle">
+<input type="text" placeholder="Favorite Shoes" ng-model="elle.myFavShoes"/>
+<button ng-click="elle.addShoes()">Add Shoes</button>
+<div ng-repeat="shoes in elle.myShoes">{{ shoes }}</div>
 </div>
+<br/>
+
+<!-- end section -->
+
+<div ng-controller = "cosmoCTRL as cosmo">
+
+<button type="button" ng-style=" {'width' : cosmo.width, 'height' : cosmo.height, 'background' : cosmo.bgColor, 'margin-left' : '150px', 'font-size' : '36px'}" ng-click="cosmo.showLightBox()">Whattt!!!</button>
+
+<div ng-show='cosmo.lightBox' ng-style=" { 'background-color' : '#88F7FF', 'width' : '200px', 'height' : '100px', 'padding' : '10px', 'position' : 'fixed', 'top' : '575px', 'left' : '375px'} "> {{ cosmo.lightBoxText }}
+
+<button type="button" ng-click="cosmo.closeLightBox()">Close</button>
+
+</div>
+
+</body>
+</html>
 
 
 
